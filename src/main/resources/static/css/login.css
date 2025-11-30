@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    font-size: 1.1em; 
+}
+
+/* NAVBAR (Replicado do Contato/Vendedores) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 999;
+}
+
+.nav-logo {
+    font-family: "Dynalight", cursive;
+    font-weight: 400;
+    font-size: 42px;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d81515;
+}
+
+.nav-button {
+    background: #d81515;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: #ff2c2c;
+}
+
+/* CONTEÚDO DA PÁGINA DE LOGIN */
+.login-page {
+    padding-top: 132px; 
+    padding-bottom: 88px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.login-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 44px; 
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.login-card h2 {
+    font-size: 26.4px; 
+    margin-bottom: 10px;
+    color: #d81515;
+    text-align: center;
+}
+
+.login-card p {
+    text-align: center;
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 1em; 
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card label {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: white;
+}
+
+.login-card input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #222;
+    color: white;
+    font-size: 1em;
+}
+
+/* NOVO ESTILO PARA A MENSAGEM DE ERRO (SUA VARIÁVEL) */
+.alert-error {
+    color: white;
+    background: #5e1111; /* Fundo vermelho escuro para tema Dark */
+    border: 1px solid #d81515;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.btn-login {
+    display: block; 
+    width: 100%;
+    padding: 13.2px; 
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+
+    background: #d81515;
+    color: black;
+    font-size: 1.1em; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 30px;
+}
+
+.btn-login:hover {
+    background: #ff2c2c;
+}
+
+.links-adicionais {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.links-adicionais a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.links-adicionais a:hover {
+    color: #d81515;
+    text-decoration: underline;
+}
+
+
+/* FOOTER (Padrão SNP Cars - Aumento de 10%) */
+.footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 55px 22px 22px 22px; 
+    margin-top: 88px; 
+}
+
+.footer-logo {
+    display: inline-block;
+    background: #d81515;
+    border-radius: 55px; 
+    padding: 16.5px 55px;
+    color: black;
+    font-family: "Dynalight", cursive;
+    font-size: 39.6px; 
+    margin-bottom: 22px; 
+}
+
+.footer-subtitulo {
+    color: #999;
+    margin: 5.5px 0; 
+    font-size: 17.6px; 
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 600px) {
+    .login-card {
+        margin: 0 15px;
+        padding: 30px; 
+    }
+    
+    .login-page {
+        min-height: auto; 
+    }
+
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+}

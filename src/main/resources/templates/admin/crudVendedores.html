@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Vendedores</title>
+    <link rel="stylesheet" th:href="@{/css/painel.css}"> 
+    <link rel="stylesheet" th:href="@{/css/admin.css}"> 
+</head>
+<body>
+    
+<header class="navbar">
+    <div class="nav-logo dynalight-regular">SNP CARS</div>
+    <nav class="nav-links">
+        <a th:href="@{/logout}" class="nav-button">Sair</a>
+    </nav>
+</header>
+
+<div class="painel-container">
+    
+    <aside class="sidebar-menu">
+        <div class="admin-header">
+            <h3>Painel Administrativo</h3>
+        </div>
+        <nav class="menu-nav">
+            <a th:href="@{/admin/carros}" class="nav-item">Gerenciar Carros</a>
+            <a th:href="@{/admin/vendedores}" class="nav-item active">Gerenciar Vendedores</a>
+            <a th:href="@{/logout}" class="nav-item logout-link">Sair</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="crud-container">
+            <h1>Gestão de Vendedores</h1>
+            
+            <div th:if="${mensagemSucesso}" class="alert-success" th:text="${mensagemSucesso}"></div>
+
+            <div class="form-section">
+                <h2 th:text="${vendedor.id > 0} ? 'Editar Vendedor (ID: ' + ${vendedor.id} + ')' : 'Novo Vendedor'"></h2>
+                
+                <form th:action="@{/admin/vendedor/salvar}" th:object="${vendedor}" method="post">
+                    <input type="hidden" th:field="*{id}">
+                    
+                    <div class="form-grid">
+                        <input type="text" th:field="*{nome}" placeholder="Nome Completo" required>
+                        <input type="email" th:field="*{email}" placeholder="Email" required>
+                        <input type="text" th:field="*{telefone}" placeholder="Telefone">
+                        <input type="text" th:field="*{cargo}" placeholder="Cargo">
+                        <input type="text" th:field="*{especialidade}" placeholder="Especialidade">
+                        <input type="text" th:field="*{fotoUrl}" placeholder="Nome da Foto (ex: eu.jpg)">
+                    </div>
+                    
+                    <button type="submit" class="btn-save">Salvar Vendedor</button>
+                    <a th:href="@{/admin/vendedores}" class="btn-cancel" th:if="${vendedor.id > 0}">Cancelar Edição</a>
+                </form>
+            </div>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>Email</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="v : ${vendedores}">
+                        <td th:text="${v.nome}"></td>
+                        <td th:text="${v.cargo}"></td>
+                        <td th:text="${v.email}"></td>
+                        <td>
+                            <a th:href="@{/admin/vendedor/editar/{id}(id=${v.id})}" class="action-btn edit">Editar</a>
+                            <a th:href="@{/admin/vendedor/excluir/{id}(id=${v.id})}" class="action-btn delete" onclick="return confirm('Tem certeza que deseja excluir este vendedor?')">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    
+</div>
+
+<footer class="footer">
+    <div class="footer-logo dynalight-regular">
+        <span>SNP CARS</span>
+    </div>
+    <p class="footer-subtitulo">© 2025 SNP Cars. Todos os direitos reservados.</p>
+    <p class="footer-subtitulo">Acesso Administrativo</p>
+</footer>
+    
+</body>
+</html>

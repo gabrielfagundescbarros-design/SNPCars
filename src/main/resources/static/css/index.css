@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #111;
+}
+
+/* HERO */
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url('/img/Aventador.jpeg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dynalight-regular {
+  font-family: "Dynalight", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 80px;   /* você pode ajustar isso */
+  color: white;      /* caso queira */
+  letter-spacing: 2px;  /* opcional, dá mais estilo */
+}
+
+.logo {
+  background: #d81515;
+  padding: 20px 50px;
+  border-radius: 10px;
+  font-size: 60px;
+  color: #000;
+  letter-spacing: 6px;
+  font-weight: bold;
+}
+
+.subtitle-big {
+  font-size: 32px;
+  margin-top: 20px;
+}
+
+.subtitle-small {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* CARD SECTION */
+.features {
+  max-width: 1200px;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.feature-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  padding: 40px 25px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+.feature-card h3 {
+  margin-top: 15px;
+  font-size: 22px;
+  color: white;
+}
+
+.feature-card p {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  background: #d81515;
+  border-radius: 50%;
+  margin: 0 auto;
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.icon-circle img {
+    max-width: 50%;       /* ajusta a largura da imagem para caber no círculo */
+    max-height: 50%;      /* ajusta a altura da imagem proporcionalmente */
+    object-fit: contain;  /* mantém proporção sem distorcer */
+}
+
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 999;
+}
+
+
+/* Logo no menu */
+.nav-logo {
+  font-size: 42px;
+  letter-spacing: 5px;
+}
+
+/* Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #d81515;
+}
+
+/* Botão de contato */
+.nav-button {
+  background: #d81515;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.nav-button:hover {
+  background: #ff2c2c;
+  color: white;
+}
+
+.hero {
+    padding-top: 70px; 
+}
+
+/* FOOTER */
+.footer {
+    background: #111; /* fundo preto */
+    color: #aaa;
+    text-align: center;
+    padding: 50px 20px 20px 20px;
+    margin-top: 80px;
+}
+
+/* Mantém o logo e o subtítulo iguais */
+.footer-logo {
+    display: inline-block;
+    background: #d81515; /* círculo vermelho da logo */
+    border-radius: 50px;
+    padding: 15px 50px;
+    color: black;
+    font-family: "Dynalight", cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.footer-subtitulo {
+    color: #999;
+    margin: 5px 0;
+    font-size: 16px;
+}

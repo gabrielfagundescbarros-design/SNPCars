@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 999;
+}
+
+.nav-logo {
+    font-family: "Dynalight", cursive;
+    font-weight: 400;
+    font-size: 42px;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d81515;
+}
+
+.nav-button {
+    background: #d81515;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: #ff2c2c;
+}
+
+/* HEADER DA PÁGINA */
+.catalogo-header {
+    text-align: center;
+    margin: 120px 20px 50px 20px;
+}
+
+.catalogo-header h2 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.catalogo-header p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* GRID DE CARROS */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+/* CARD DO CARRO */
+.car-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* IMAGEM DO CARRO */
+.car-img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* INFORMAÇÕES DO CARRO */
+.car-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.car-info .price {
+    font-size: 22px;
+    color: #d81515;
+    margin-bottom: 5px;
+}
+
+.car-info .car-name {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.car-info p {
+    font-size: 14px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    gap: 6px; /* espaço entre ícone e texto */
+}
+
+.icon-placeholder {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-color: #ccc; /* cor igual ao texto */
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.car-info button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #d81515;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.car-info button:hover {
+    background: #ff2c2c;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 50px 20px 20px 20px;
+    margin-top: 80px;
+}
+
+.footer-logo {
+    display: inline-block;
+    background: #d81515;
+    border-radius: 50px;
+    padding: 15px 50px;
+    color: black;
+    font-family: "Dynalight", cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.footer-subtitulo {
+    color: #999;
+    margin: 5px 0;
+    font-size: 16px;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 999;
+}
+
+.nav-logo {
+    font-family: "Dynalight", cursive;
+    font-weight: 400;
+    font-size: 42px;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d81515;
+}
+
+.nav-button {
+    background: #d81515;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: #ff2c2c;
+}
+
+/* HEADER DA PÁGINA */
+.catalogo-header {
+    text-align: center;
+    margin: 120px 20px 50px 20px;
+}
+
+.catalogo-header h2 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.catalogo-header p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* GRID DE CARROS */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+/* CARD DO CARRO */
+.car-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* IMAGEM DO CARRO */
+.car-img {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.car-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* INFORMAÇÕES DO CARRO */
+.car-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.car-info .price {
+    font-size: 22px;
+    color: #d81515;
+    margin-bottom: 5px;
+}
+
+.car-info .car-name {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.car-info p {
+    font-size: 14px;
+    color: #ccc;
+    display: flex;
+    align-items: center; /* garante que ícone e texto fiquem alinhados verticalmente */
+    gap: 6px; /* espaço entre ícone e texto */
+    margin: 0;
+}
+
+.icon-placeholder {
+    font-size: 16px; /* tamanho do emoji */
+    line-height: 1;  /* remove espaçamento extra */
+    display: inline-flex;
+    align-items: center; /* centraliza verticalmente */
+    justify-content: center;
+    background: none; /* remove qualquer fundo */
+    width: auto;      /* remove largura fixa */
+    height: auto;     /* remove altura fixa */
+    border-radius: 0; /* remove borda arredondada */
+}
+.car-info button {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #d81515;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.car-info button:hover {
+    background: #ff2c2c;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 50px 20px 20px 20px;
+    margin-top: 80px;
+}
+
+.footer-logo {
+    display: inline-block;
+    background: #d81515;
+    border-radius: 50px;
+    padding: 15px 50px;
+    color: black;
+    font-family: "Dynalight", cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.footer-subtitulo {
+    color: #999;
+    margin: 5px 0;
+    font-size: 16px;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Carros - SNP Admin</title>
+    <link rel="stylesheet" th:href="@{/css/painel.css}">
+    <link rel="stylesheet" th:href="@{/css/admin.css}"> 
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-logo dynalight-regular">SNP CARS</div>
+    <nav class="nav-links">
+        <a th:href="@{/logout}" class="nav-button">Sair</a>
+    </nav>
+</header>
+
+<div class="painel-container">
+    
+    <aside class="sidebar-menu">
+        <div class="admin-header">
+            <h3>Painel Administrativo</h3>
+        </div>
+        <nav class="menu-nav">
+            <a th:href="@{/admin/carros}" class="nav-item active">Gerenciar Carros</a>
+            <a th:href="@{/admin/vendedores}" class="nav-item">Gerenciar Vendedores</a>
+            <a th:href="@{/logout}" class="nav-item logout-link">Sair</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <div class="crud-container"> <h1>Gestão de Carros</h1>
+            
+            <div th:if="${mensagemSucesso}" class="alert-success">
+                <span th:text="${mensagemSucesso}">Carro salvo com sucesso!</span>
+            </div>
+
+            <div class="form-section"> <h2 th:text="${carro.id > 0 ? 'Editar Carro (ID: ' + carro.id + ')' : 'Novo Carro'}"> Cadastrar Novo Carro</h2>
+
+                <form th:action="@{/admin/carro/salvar}" th:object="${carro}" method="post">
+                    
+                    <input type="hidden" th:field="*{id}">
+                    
+                    <div class="form-grid"> <div>
+                            
+                            <input type="text" id="marca" th:field="*{marca}" placeholder="Marca" required>
+                        </div>
+                        <div>
+                            
+                            <input type="text" id="modelo" th:field="*{modelo}" placeholder="Modelo" required>
+                        </div>
+                        <div>
+                            
+                            <input type="number" id="ano" th:field="*{ano}" placeholder="Ano" required>
+                        </div>
+                        <div>
+                            
+                            <input type="number" id="preco" th:field="*{preco}" step="0.01" placeholder="Preço (R$)" required>
+                        </div>
+                        <div>
+                            
+                            <input type="number" id="km" th:field="*{quilometragem}" placeholder="Quilometragem (km)" required>
+                        </div>
+                        <div>
+                            
+                            <input type="text" id="cor" th:field="*{cor}" placeholder="Cor" required>
+                        </div>
+                        <div>
+                            
+                            <input type="text" id="combustivel" th:field="*{combustivel}" placeholder="Combustível" required>
+                        </div>
+                        <div>
+                            
+                            <select id="vendedor" th:field="*{vendedorId}" aria-placeholder="Selecione um vendedor" required> 
+                                <option th:each="v : ${vendedoresDisponiveis}" 
+                                        th:value="${v.id}" 
+                                        th:text="${v.nome}">Nome Vendedor</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div style="grid-column: 1 / 3;"> 
+                        <input type="text" id="fotoUrl" th:field="*{fotoUrl}" placeholder="Nome da Foto (ex: golBola.jpg)" required>
+                    </div>
+
+                    <div style="margin-top: 20px;">
+                        <button type="submit" class="btn-save" th:text="${carro.id > 0 ? 'Salvar Alterações' : 'Cadastrar Carro'}">Cadastrar Carro</button>
+                    </div>
+                </form>
+            </div>
+            
+            <h3 style="color: #aaa; margin-bottom: 20px; margin-top: 40px;">Lista de Carros Cadastrados</h3>
+            
+            <table class="data-table"> <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Foto</th>
+                        <th>Modelo</th>
+                        <th>Marca</th>
+                        <th>Ano</th>
+                        <th>Preço</th>
+                        <th>Vendedor</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="carro : ${carros}">
+                        <td th:text="${carro.id}">1</td>
+                        <td>
+                            <img th:src="@{'/img/' + ${carro.fotoUrl}}" alt="Foto do Carro" style="width: 50px; height: 50px; border-radius: 4px; object-fit: cover;">
+                        </td>
+                        <td th:text="${carro.modelo}">Mustang GT</td>
+                        <td th:text="${carro.marca}">Ford</td>
+                        <td th:text="${carro.ano}">2023</td>
+                        <td th:text="'R$ ' + ${#numbers.formatDecimal(carro.preco, 0, 'POINT', 2, 'COMMA')}">R$ 150.000,00</td>
+                        <td th:text="${carro.nomeVendedor != null ? carro.nomeVendedor : 'N/A'}">João Silva</td>
+                        <td>
+                            <a th:href="@{/admin/carro/editar/{id}(id=${carro.id})}" class="action-btn edit">Editar</a>
+                            <a th:href="@{/admin/carro/excluir/{id}(id=${carro.id})}" class="action-btn delete" onclick="return confirm('Tem certeza que deseja excluir este carro?');">Excluir</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </main>
+</div>
+
+<footer class="footer">
+    <div class="footer-logo dynalight-regular">
+        <span>SNP CARS</span>
+    </div>
+    <p class="footer-subtitulo">© 2025 SNP Cars. Todos os direitos reservados.</p>
+    <p class="footer-subtitulo">Acesso Administrativo</p>
+</footer>
+    
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - SNP Cars</title>
+    <link rel="stylesheet" th:href="@{/css/catalogo.css}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-logo dynalight-regular">SNP CARS</div>
+    <nav class="nav-links">
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/catalogo}">Catálogo</a>
+        <a th:href="@{/vendedores}">Vendedores</a>
+        <a th:href="@{/contato}" class="nav-button">Contato</a>
+    </nav>
+</header>
+
+<section class="catalogo-header">
+    <h2>Nosso Portfólio</h2>
+    <p>Confira nossa seleção exclusiva de carros usados de luxo</p>
+</section>
+
+<section class="cars-grid">
+    
+    <div class="car-card" th:each="carro : ${carros}">
+        <div class="car-img">
+            <img th:src="@{'/img/' + ${carro.fotoUrl}}" th:alt="${carro.modelo}">
+        </div>
+        <div class="car-info">
+            <h3 class="price" th:text="'R$ ' + ${#numbers.formatDecimal(carro.preco, 0, 'POINT', 2, 'COMMA')}">R$ 0,00</h3>
+            
+            <h4 class="car-name" th:text="${carro.marca} + ' ' + ${carro.modelo}">Modelo</h4>
+            
+            <p><span class="icon-placeholder">🗓️</span><strong>Ano:</strong> <span th:text="${carro.ano}"></span></p>
+            <p><span class="icon-placeholder">🛣️</span><strong>Km:</strong> <span th:text="${carro.quilometragem} + ' km'"></span></p>
+            <p><span class="icon-placeholder">🎨</span><strong>Cor:</strong> <span th:text="${carro.cor}"></span></p>
+            <p><span class="icon-placeholder">⚡</span><strong>Combustível:</strong> <span th:text="${carro.combustivel}"></span></p>
+            
+            <p style="margin-top:5px; font-size: 12px; color: #d81515;">
+                <span class="icon-placeholder">👤</span> <span th:text="${carro.nomeVendedor}"></span>
+            </p>
+
+            <button>Ver Detalhes</button>
+        </div>
+    </div>
+    
+    <div th:if="${#lists.isEmpty(carros)}" style="color: white; text-align: center; grid-column: 1/-1;">
+        <p>Nenhum carro cadastrado no momento.</p>
+    </div>
+
+</section>
+
+<footer class="footer">
+    <div class="footer-logo">
+        <span>SNP CARS</span>
+    </div>
+    <p class="footer-subtitulo">© 2025 SNP Cars. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

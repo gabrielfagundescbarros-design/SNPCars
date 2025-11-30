@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    /* Aumenta o tamanho base da fonte em 10% para a herança */
+    font-size: 1.1em; 
+}
+
+/* NAVBAR (Mantido para não distorcer o cabeçalho fixo) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 999;
+}
+
+.nav-logo {
+    font-family: "Dynalight", cursive;
+    font-weight: 400;
+    font-size: 42px;
+    letter-spacing: 5px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d81515;
+}
+
+.nav-button {
+    background: #d81515;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.nav-button:hover {
+    background: #ff2c2c;
+}
+
+/* CONTEÚDO */
+.contato-page {
+    max-width: 1200px;
+    /* Aumento de 10% (120px -> 132px, 80px -> 88px) */
+    margin: 132px auto 88px auto; 
+    padding: 0 20px;
+}
+
+.contato-header {
+    text-align: center;
+    /* Aumento de 10% (40px -> 44px) */
+    margin-bottom: 44px;
+}
+
+.contato-header h2 {
+    /* Aumento de 10% (36px -> 39.6px) */
+    font-size: 39.6px;
+    /* Aumento de 10% (10px -> 11px) */
+    margin-bottom: 11px;
+}
+
+.contato-header p {
+    /* Aumento de 10% (18px -> 19.8px) */
+    font-size: 19.8px;
+    opacity: 0.8;
+}
+
+/* GRID */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Aumento de 10% (40px -> 44px) */
+    gap: 44px;
+    margin-bottom: 44px;
+}
+
+.contato-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    /* Aumento de 10% (30px -> 33px) */
+    padding: 33px;
+    min-height: auto; 
+}
+
+.contato-card h3 {
+    /* Aumento de 10% (20px -> 22px) */
+    margin-bottom: 22px;
+    /* Aumento de 10% (24px -> 26.4px) */
+    font-size: 26.4px; 
+    color: white;
+}
+
+/* ICON BALAO */
+.icon-balao {
+    /* Aumento de 10% (60px -> 66px) */
+    width: 66px; 
+    height: 66px;
+    background: #d81515;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Aumento de 10% (15px -> 16.5px) */
+    margin-right: 16.5px; 
+    flex-shrink: 0; 
+    text-decoration: none; 
+    transition: transform 0.2s;
+}
+
+.icon-balao:hover {
+    transform: scale(1.05);
+}
+
+.icon-balao img {
+    /* Aumento de 10% (32px -> 35.2px) */
+    width: 35.2px; 
+    height: 35.2px;
+    object-fit: contain;
+}
+
+/* Contato items (Card da Esquerda) */
+.contato-item {
+    display: flex;
+    align-items: center;
+    /* Aumento de 10% (20px -> 22px) */
+    margin-bottom: 22px; 
+}
+
+.contato-item h4 {
+    /* Aumento de 10% (5px -> 5.5px) */
+    margin-bottom: 5.5px; 
+    font-size: 1.1em; 
+}
+
+.contato-info p {
+    font-size: 1em; 
+}
+
+/* NOVO ESTILO PARA O BOTÃO WHATSAPP */
+.btn-whatsapp {
+    display: block; 
+    width: 100%;
+    
+    /* Aumento de 10% (12px -> 13.2px) */
+    padding: 13.2px;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+
+    background: #d81515;
+    color: black;
+    font-size: 1.1em; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background: #ff2c2c;
+}
+
+/* Redes sociais (AGORA DENTRO DE .contato-form) */
+.contato-social {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    /* Aumento de 10% (20px -> 22px) */
+    gap: 22px; 
+    /* Aumento de 10% (15px -> 16.5px) */
+    margin-top: 16.5px; 
+}
+
+/* FOOTER (Mantido o estilo) */
+.footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    /* Aumento de 10% (50px 20px 20px 20px -> 55px 22px 22px 22px) */
+    padding: 55px 22px 22px 22px; 
+    /* Aumento de 10% (80px -> 88px) */
+    margin-top: 88px; 
+}
+
+.footer-logo {
+    display: inline-block;
+    background: #d81515;
+    /* Aumento de 10% (50px -> 55px) */
+    border-radius: 55px; 
+    /* Aumento de 10% (15px 50px -> 16.5px 55px) */
+    padding: 16.5px 55px;
+    color: black;
+    font-family: "Dynalight", cursive;
+    /* Aumento de 10% (36px -> 39.6px) */
+    font-size: 39.6px; 
+    /* Aumento de 10% (20px -> 22px) */
+    margin-bottom: 22px; 
+}
+
+.footer-subtitulo {
+    color: #999;
+    /* Aumento de 10% (5px -> 5.5px) */
+    margin: 5.5px 0; 
+    /* Aumento de 10% (16px -> 17.6px) */
+    font-size: 17.6px; 
+}
+
+
+/* --- NOVOS ESTILOS PARA O BOTÃO DE ACESSO ADMINISTRATIVO NO RODAPÉ --- */
+
+/* Contêiner para centralizar */
+.admin-acesso-area {
+    margin-top: 30px; 
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+/* Estilo do botão vermelho com texto branco */
+.btn-admin-footer {
+    display: inline-block; 
+    
+    /* Cores e Formato do Botão Padrão */
+    background: #d81515; /* Vermelho SNP Cars */
+    color: black; /* Texto em branco */
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    
+    /* Tamanho do botão (Mantido no padrão 10% maior) */
+    font-size: 1.1em;
+    padding: 14px 28px; 
+    
+    transition: background 0.3s;
+}
+
+.btn-admin-footer:hover {
+    background: #ff2c2c; /* Vermelho mais claro ao passar o mouse */
+}
+
+
+/* RESPONSIVIDADE (Corrigida a sintaxe e ajustada para o novo tamanho) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+    }
+    .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .nav-links a {
+        padding: 5px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    .contato-grid {
+        grid-template-columns: 1fr; 
+    }
+    
+    .contato-page {
+        /* Aumento de 10% (150px -> 165px, 10px -> 11px) */
+        margin-top: 165px; 
+        padding: 0 11px;
+    }
+
+    .contato-card {
+        min-height: auto; 
+    }
+    
+}

@@ -1,0 +1,253 @@
+/* ARQUIVO: /css/painel.css (CÓDIGO COMPLETO) */
+
+@import url('https://fonts.googleapis.com/css2?family=Dynalight&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    font-size: 1.1em; 
+}
+
+/* Tipografia Dynalight */
+.dynalight-regular {
+    font-family: "Dynalight", cursive;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 2px;
+}
+
+/* NAVBAR (TOPO - UNIFICADO COM ESTILO DO INDEX.CSS) */
+.navbar { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    /* Manter o fundo sólido para o painel */
+    background: #000; 
+    /* backdrop-filter: blur(8px); REMOVIDO */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 999;
+}
+
+.navbar .nav-logo { 
+    font-size: 42px;
+    letter-spacing: 5px;
+    color: white; 
+}
+
+/* Links */
+.navbar .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #d81515;
+}
+
+/* Botão de contato / Sair */
+.navbar .nav-button {
+    background: #d81515;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: black; 
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navbar .nav-button:hover {
+    background: #ff2c2c;
+    color: white;
+}
+
+/* CONTEÚDO DO PAINEL (Container Flexbox) */
+.painel-container {
+    display: flex;
+    padding-top: 70px; /* Espaço para a navbar fixa */
+    min-height: 100vh;
+}
+
+/* MENU LATERAL (Sidebar) */
+.sidebar-menu {
+    width: 250px;
+    background-color: #1a1a1a;
+    border-right: 1px solid #333;
+    padding: 20px 0;
+    flex-shrink: 0; 
+}
+
+.admin-header {
+    text-align: center;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+}
+
+.admin-header h3 {
+    color: #d81515;
+    font-size: 1.2em;
+}
+
+.menu-nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #ccc;
+    padding: 12px 20px;
+    transition: background-color 0.2s, color 0.2s;
+    font-size: 0.9em;
+}
+
+.nav-item:hover {
+    background-color: #222;
+    color: white;
+}
+
+/* Estilo do item ativo na Sidebar */
+.nav-item.active {
+    background-color: #d81515;
+    color: black;
+    font-weight: bold;
+    border-left: 5px solid #ff2c2c;
+}
+
+
+/* ÁREA DE CONTEÚDO PRINCIPAL */
+.main-content {
+    flex-grow: 1; 
+    padding: 40px;
+}
+
+.main-content h1, .main-content h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+
+/* CARDS DE ESTATÍSTICAS */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.stat-card h4 {
+    font-size: 1.1em;
+    color: #d81515;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+    color: white;
+}
+
+/* CARD DE ATIVIDADE RECENTE */
+.recent-activity-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.recent-activity-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 10px;
+}
+
+/* FOOTER (UNIFICADO COM ESTILO DO INDEX.CSS) */
+.footer {
+    background: #111; /* fundo preto */
+    color: #aaa;
+    text-align: center;
+    padding: 50px 20px 20px 20px;
+    margin-top: 80px;
+}
+
+.footer-logo {
+    display: inline-block;
+    background: #d81515; /* círculo vermelho da logo */
+    border-radius: 50px;
+    padding: 15px 50px;
+    color: black;
+    font-family: "Dynalight", cursive;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.footer-subtitulo {
+    color: #999;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+/* RESPONSIVIDADE PARA PAINEL */
+@media (max-width: 900px) {
+    .painel-container {
+        flex-direction: column;
+    }
+
+    .sidebar-menu {
+        width: 100%;
+        padding: 15px 0;
+        border-right: none;
+        border-bottom: 1px solid #333;
+    }
+    
+    .menu-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-item {
+        padding: 8px 15px;
+        margin: 5px;
+        border-radius: 5px;
+        border-left: none !important;
+    }
+
+    .nav-item.active {
+        border-left: none !important;
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+}

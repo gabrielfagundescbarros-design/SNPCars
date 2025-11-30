@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vendedores - SNP Cars</title>
+    <link rel="stylesheet" th:href="@{/css/vendedores.css}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-logo dynalight-regular">SNP CARS</div>
+    <nav class="nav-links">
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/catalogo}">Catálogo</a>
+        <a th:href="@{/vendedores}">Vendedores</a>
+        <a th:href="@{/contato}" class="nav-button">Contato</a>
+    </nav>
+</header>
+
+<section class="vendedores-header">
+    <h2>Nossa Equipe de Vendedores</h2>
+    <p>Profissionais experientes prontos para ajudá-lo</p>
+</section>
+
+<section class="vendedores-grid">
+
+    <div class="vendedor-card" th:each="vendedor : ${vendedores}">
+        <div class="vendedor-img">
+            <img th:src="@{'/img/' + ${vendedor.fotoUrl}}" th:alt="${vendedor.nome}">
+        </div>
+        <div class="vendedor-info">
+            <h3 th:text="${vendedor.nome}">Nome</h3>
+            <p class="cargo" th:text="${vendedor.cargo}">Cargo</p>
+            <p class="especialidade" th:text="${vendedor.especialidade}">Especialidade</p>
+            
+            <div class="contato-info">
+                <h4 class="contato-titulo">Informações de Contato</h4>
+
+                <span>📞 <span th:text="${vendedor.telefone}"></span></span>
+                <span style="font-size: 12px;">✉️ <span th:text="${vendedor.email}"></span></span>
+            </div>
+            
+            <a th:href="@{'https://wa.me/' + ${#strings.replace(#strings.replace(#strings.replace(#strings.replace(#strings.replace(vendedor.telefone, '(', ''), ')', ''), ' ', ''), '-', ''), '+', '')}}" 
+               target="_blank" 
+               class="btn-contato">
+                Entrar em Contato
+            </a>
+        </div>
+    </div>
+
+</section>
+
+<footer class="footer">
+    <div class="footer-logo">
+        <span>SNP CARS</span>
+    </div>
+    <p class="footer-subtitulo">© 2025 SNP Cars. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>

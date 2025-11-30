@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - SNP Cars</title>
+    <link rel="stylesheet" th:href="@{/css/contato.css}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-logo dynalight-regular">SNP CARS</div>
+    <nav class="nav-links">
+        <a th:href="@{/}">Início</a>
+        <a th:href="@{/catalogo}">Catálogo</a>
+        <a th:href="@{/vendedores}">Vendedores</a>
+        <a th:href="@{/contato}" class="nav-button">Contato</a>
+    </nav>
+</header>
+
+<div class="contato-page">
+
+    <div class="contato-header">
+        <h2>Entre em Contato</h2>
+        <p>Estamos prontos para atendê-lo</p>
+    </div>
+
+    <div class="contato-grid">
+
+        <div class="contato-card contato-info">
+            <h3>Informações de Contato</h3>
+
+            <div class="contato-item">
+                <div class="icon-balao">
+                    <img th:src="@{/img/telefone.png}" alt="Telefone">
+                </div>
+                <div>
+                    <h4>Telefone</h4>
+                    <p>Ligação: (13) 99187-2522</p>
+                    <p>WhatsApp: (13) 97418-4203</p>
+                </div>
+            </div>
+
+            <div class="contato-item">
+                <div class="icon-balao">
+                    <img th:src="@{/img/email.png}" alt="Email">
+                </div>
+                <div>
+                    <h4>Email</h4>
+                    <p>contato@snpcars.com.br</p>
+                    <p>vendas@snpcars.com.br</p>
+                </div>
+            </div>
+
+            <div class="contato-item">
+                <div class="icon-balao">
+                    <img th:src="@{/img/endereco.png}" alt="Endereço">
+                </div>
+                <div>
+                    <h4>Endereço</h4>
+                    <p>R. Augusto de Oliveira Santos, 811 </p>
+                    <p>Santos - SP, 11347-030</p>
+                </div>
+            </div>
+
+            <div class="contato-item">
+                <div class="icon-balao">
+                    <img th:src="@{/img/relogio.png}" alt="Horário">
+                </div>
+                <div>
+                    <h4>Horário de Funcionamento</h4>
+                    <p>Terça a Sábado: 12h às 20h</p>
+                    <p>Domingo: 12h às 18h</p>
+                    <p>Segunda: Fechado</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contato-card contato-form">
+            
+            <h3>Fale Conosco Rápido!</h3>
+            <p style="margin-bottom: 25px; color: #ccc;">Clique abaixo para iniciar uma conversa no WhatsApp e nos envie sua mensagem diretamente.</p>
+
+            <a th:href="@{'https://wa.me/5513974184203'}" 
+                target="_blank" 
+                class="btn-whatsapp">
+                Enviar Mensagem
+            </a>
+
+            <hr style="margin: 30px 0; border-color: #333;">
+
+            <div class="contato-social">
+                <h3>Nossas Redes Sociais</h3>
+                <div class="social-icons">
+                    
+                    <a th:href="@{https://www.facebook.com/Felipe Gomes Martins}" target="_blank" class="icon-balao">
+                        <img th:src="@{/img/facebook.png}" alt="Facebook">
+                    </a>
+                    
+                    <a th:href="@{https://www.instagram.com/raffastriica}" target="_blank" class="icon-balao">
+                        <img th:src="@{/img/instagram.png}" alt="Instagram">
+                    </a>
+                    
+                    <a th:href="@{'https://wa.me/5513974184203'}" target="_blank" class="icon-balao">
+                        <img th:src="@{/img/whatsapp.png}" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+<footer class="footer">
+    <div class="footer-logo">
+        <span>SNP CARS</span>
+    </div>
+    <p class="footer-subtitulo">© 2025 SNP Cars. Todos os direitos reservados.</p>
+    
+    <div class="admin-acesso-area">
+        <a th:href="@{/admin/carros}" class="btn-admin-footer">Acesso Administrativo</a>
+    </div>
+</footer>
+
+</body>
+</html>

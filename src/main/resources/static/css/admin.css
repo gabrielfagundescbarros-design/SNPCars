@@ -1,0 +1,128 @@
+/* ARQUIVO: /css/admin.css (Focado em Componentes CRUD - Formulários e Tabelas) */
+
+/* Removido body, h1, h2 e admin-container/crud-container para evitar conflito com painel.css */
+
+/* Formulários e Seções de CRUD */
+.form-section {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    border: 1px solid #333;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+input, select {
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.btn-save {
+    background: #d81515;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.btn-save:hover { background: #ff2c2c; }
+
+.btn-cancel {
+    background: #444;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-left: 10px;
+}
+
+/* Tabela de Dados */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.data-table th, .data-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.data-table th { background: #222; color: #d81515; }
+
+.action-btn {
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-right: 5px;
+    transition: opacity 0.3s;
+}
+.action-btn:hover { opacity: 0.8; }
+
+.edit { background: #333; color: white; }
+.delete { background: #d81515; color: black; }
+
+/* Mensagens de Alerta */
+.alert-success {
+    background: #2ecc71; 
+    color: black;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.back-link {
+    display: block;
+    margin-top: 30px;
+    color: #aaa;
+    text-decoration: none;
+    text-align: center;
+}
+.back-link:hover { color: white; }
+
+
+/* RESPONSIVIDADE (CRUD) */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .data-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* NOVO CÓDIGO: REMOVE AS SETAS DE INCREMENTO/DECREMENTO (SPINNERS) EM INPUTS TYPE="NUMBER" */
+
+/* Para Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

@@ -1,0 +1,16 @@
+# server: 
+ #   port: 8080
+
+spring:
+    datasource:
+        url: ${SNP_CARS_DB_URL}
+        username: ${SNP_CARS_DB_USERNAME}
+        password: ${SNP_CARS_DB_PASSWORD}
+        driver-class-name: org.postgresql.Driver
+        initialize: true
+        
+    sql:
+        init:
+            schema-locations: classpath:/schema-snpcars-sql.sql
+            mode: always
+            platform: postgres

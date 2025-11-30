@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Principal</title>
+    <link rel="stylesheet" th:href="@{/css/painel.css}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="nav-logo dynalight-regular">SNP CARS</div>
+    <nav class="nav-links">
+        <a th:href="@{/logout}" class="nav-button">Sair</a>
+    </nav>
+</header>
+
+<div class="painel-container">
+    
+    <aside class="sidebar-menu">
+        <div class="admin-header">
+            <h3>Painel Administrativo</h3>
+        </div>
+        <nav class="menu-nav">
+            <a th:href="@{/admin/painel}" class="nav-item active">Dashboard</a>
+            <a th:href="@{/admin/carros}" class="nav-item">Gerenciar Carros</a>
+            <a th:href="@{/admin/vendedores}" class="nav-item">Gerenciar Vendedores</a>
+            <a th:href="@{/admin/config}" class="nav-item">Configurações</a>
+            <a th:href="@{/logout}" class="nav-item logout-link">Sair</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <h2>Dashboard Principal</h2>
+        <p>Bem-vindo ao painel de administração da SNP Cars. Aqui você pode gerenciar todo o seu catálogo e equipe.</p>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h4>Total de Veículos</h4>
+                <p th:text="${totalCarros ?: 125}">125</p> 
+            </div>
+            <div class="stat-card">
+                <h4>Veículos Disponíveis</h4>
+                <p th:text="${carrosDisponiveis ?: 88}">88</p>
+            </div>
+            <div class="stat-card">
+                <h4>Vendedores Ativos</h4>
+                <p th:text="${totalVendedores ?: 12}">12</p>
+            </div>
+            <div class="stat-card">
+                <h4>Total de Vendas (Mês)</h4>
+                <p th:text="${vendasMes ?: '3,5 M'}">3,5 M</p>
+            </div>
+        </div>
+        
+        <div class="recent-activity-card">
+            <h3>Atividades Recentes</h3>
+            <ul>
+                <li>Carro: **[Ford Mustang 2023]** adicionado por João.</li>
+                <li>Vendedor: **Maria** teve o status atualizado.</li>
+                <li>Contato: Novo lead de **Pedro** sobre um Porsche.</li>
+            </ul>
+        </div>
+    </main>
+
+</div>
+
+<footer class="footer">
+    <div class="footer-logo dynalight-regular">
+        <span>SNP CARS</span>
+    </div>
+    <p class="footer-subtitulo">© 2025 SNP Cars. Todos os direitos reservados.</p>
+    <p class="footer-subtitulo">Acesso Administrativo</p>
+</footer>
+
+</body>
+</html>
