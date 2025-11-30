@@ -35,7 +35,7 @@
             <h4 class="car-name" th:text="${carro.marca} + ' ' + ${carro.modelo}">Modelo</h4>
             
             <p><span class="icon-placeholder">🗓️</span><strong>Ano:</strong> <span th:text="${carro.ano}"></span></p>
-            <p><span class="icon-placeholder">🛣️</span><strong>Km:</strong> <span th:text="${carro.quilometragem} + ' km'"></span></p>
+            <p><span class="icon-placeholder">🛣️</span><strong>Km:</strong> <span th:text="${#numbers.formatDecimal(carro.quilometragem, 0, 'POINT', 0, 'COMMA')} + ' km'"></span></p>
             <p><span class="icon-placeholder">🎨</span><strong>Cor:</strong> <span th:text="${carro.cor}"></span></p>
             <p><span class="icon-placeholder">⚡</span><strong>Combustível:</strong> <span th:text="${carro.combustivel}"></span></p>
             
